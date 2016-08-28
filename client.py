@@ -23,7 +23,10 @@ def receving(name, sock):
 # create socket object
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)   
 # get local machine hostname     
+
+# take ip here
 host = socket.gethostname()
+# take port here
 port = 0
 # bind to socket           
 s.bind((host, port))
