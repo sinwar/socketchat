@@ -75,10 +75,10 @@ class Client:
 		self.out_buffer.put('/exit')
 
 if __name__ == '__main__':
-	# take ip here
-	host = socket.gethostname()
-	# take port here
-	port = 8080
+	# take ip here '172.16.2.69'
+	host = raw_input("Enter the ip of server")
+	# take port here 8080
+	port = int(raw_input("Enter the port of server"))
 	p = Client(host, port)
 	p.connect()
 	# print "change ur name by using /name and exit by /exit"

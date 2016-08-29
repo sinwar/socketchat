@@ -58,7 +58,7 @@ if __name__ == '__main__':
 	clients = []
 
 	main_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	main_socket.bind(('', PORT))
+	main_socket.bind(('172.16.2.69', PORT))
 	main_socket.listen(8)
 
 	print 'Starting server at port ' + str(PORT)
