@@ -46,7 +46,7 @@ class ClientManager(threading.Thread):
 						self.id = new_id
 					# normal message
 					else:
-						response = self.id + ' : ' + line
+						response = self.id + "-----> " + line
 						print response
 						for client in clients:
 							client.send(response)
@@ -59,7 +59,7 @@ if __name__ == '__main__':
 
 	main_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	main_socket.bind(('', PORT))
-	main_socket.listen(5)
+	main_socket.listen(8)
 
 	print 'Starting server at port ' + str(PORT)
 

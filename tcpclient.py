@@ -33,14 +33,16 @@ class Send(threading.Thread):
 		self.conn.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
 		self.client = client
 		self.buffer = client.out_buffer
+		# self.b = str(client.host) + ":" + str(client.port)
 
 	def run(self):
 		""" Puts outgoing messages into the outgoing queue until the connection ends."""
 		while self.client.connected:
 			try:
-				msg = raw_input("Enter your message")
+				msg = raw_input("Type here")
 				self.conn.send(msg)
 				if '/exit' in msg: self.client.connected = False
+				# if '/name' in msg: self.b = msg[6::]
 			except:
 				# closes the connection.
 				break
@@ -79,4 +81,5 @@ if __name__ == '__main__':
 	port = 8080
 	p = Client(host, port)
 	p.connect()
+	# print "change ur name by using /name and exit by /exit"
 
